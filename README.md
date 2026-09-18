@@ -55,9 +55,6 @@ Add your Gemini API key to `.env`:
 GEMINI_API_KEY=your_api_key_here
 ```
 
-Never commit `.env` or expose its API key. `.env.example` is safe to commit because it contains only the variable name and an empty value.
-
-
 ## Run the Streamlit App
 
 ```powershell
