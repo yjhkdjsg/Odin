@@ -17,14 +17,29 @@ The project also investigates **whether and when RAG improves LLM-based self-deb
 ## Tech Stack
 
 * Python
-* LangGraph
-* LangChain
-* Gemini
-* ChromaDB
-* Sentence Transformers
-* FastAPI
-* Git
+# ODIN
 
-## Status
+ODIN is an agentic self-debugging demo: Gemini generates Python code, a subprocess executes it, and LangGraph routes failed runs back through repair.
 
-Under Development.
+## Setup
+
+Requires Python 3.12+ and `uv`.
+
+```powershell
+uv venv
+uv pip install -r requirements.txt
+Copy-Item .env.example .env
+```
+
+Set `GEMINI_API_KEY` in `.env`.
+
+## Run
+
+```powershell
+uv run python scripts/demo.py "Write Python code that divides 10 by zero, then repair it"
+uv run streamlit run frontend/app.py
+```
+
+The architecture is a small Generate -> Execute -> Analyze loop: LangGraph owns state and routing, Gemini generates or repairs code, the executor runs it with a timeout, and the classifier labels failures.
+
+RAG, FastAPI, and experiments are planned for later phases.
