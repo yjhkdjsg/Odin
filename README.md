@@ -2,17 +2,17 @@
 
 ### Orchestrated Debugging and Intelligent Navigation
 
-ODIN is an agentic self-debugging framework for automated Python code repair. For this first checkpoint, Gemini generates code, ODIN executes it, classifies failures, and sends failed code back to Gemini for repair.
+ODIN is an agentic AI framework for **automated code debugging and repair** using Large Language Models and Retrieval-Augmented Generation (RAG).
 
-## Current Workflow
+It is designed to work with real codebases by iteratively:
 
 ```text
-Generate -> Execute -> Analyze -> Repair
-					^          |
-					|----------|
+Generate → Execute → Analyze → Retrieve → Repair → Verify
 ```
 
-The workflow stops when the generated program succeeds or the maximum number of iterations is reached.
+When a program fails, ODIN analyzes the error and, when necessary, retrieves relevant programming knowledge such as documentation, API references, and code examples to help generate a better repair.
+
+The project also investigates **whether and when RAG improves LLM-based self-debugging** compared to relying only on execution feedback.
 
 ## Tech Stack
 
@@ -57,15 +57,6 @@ GEMINI_API_KEY=your_api_key_here
 
 Never commit `.env` or expose its API key. `.env.example` is safe to commit because it contains only the variable name and an empty value.
 
-## Run the CLI Demo
-
-Pass a task description in quotes:
-
-```powershell
-uv run python scripts/demo.py "Write a Python program that calculates an average and repair any runtime errors"
-```
-
-The CLI prints the final success state, iteration count, error category, generated code, and any final traceback.
 
 ## Run the Streamlit App
 
