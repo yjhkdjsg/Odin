@@ -12,14 +12,16 @@ from odin.graph import build_graph
 load_dotenv()
 st.set_page_config(page_title="ODIN", page_icon="O", layout="centered")
 st.title("ODIN")
-st.caption("Agentic self-debugging demo")
+st.caption("Agentic Self-Debugging Framework for Automated Code Repair using Retrieval-Augmented Generation")
 task = st.text_area("Task description", placeholder="Describe the Python program to generate and debug.")
+input_data = st.text_area("Test input (optional)", placeholder="Provide stdin for generated programs, if needed.")
 
 if st.button("Run", type="primary", disabled=not task.strip()):
     status = st.empty()
     output = st.container()
     initial_state = {
         "task": task,
+        "input_data": input_data,
         "code": "",
         "error": "",
         "error_category": "",

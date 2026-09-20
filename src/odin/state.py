@@ -4,6 +4,7 @@ from typing import Annotated, TypedDict
 
 class GraphState(TypedDict):
     task: str
+    input_data: str
     code: str
     error: str
     error_category: str

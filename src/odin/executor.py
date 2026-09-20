@@ -10,12 +10,13 @@ class ExecutionResult:
     stderr: str
 
 
-def run_code(code: str, timeout: int = 5) -> ExecutionResult:
+def run_code(code: str, timeout: int = 5, input_data: str = "") -> ExecutionResult:
     try:
         result = subprocess.run(
             [sys.executable, "-c", code],
             capture_output=True,
             text=True,
+            input=input_data,
             timeout=timeout,
         )
     except subprocess.TimeoutExpired as exc:

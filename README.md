@@ -61,7 +61,7 @@ GEMINI_API_KEY=your_api_key_here
 uv run streamlit run frontend/app.py
 ```
 
-Open the local URL shown by Streamlit, enter a task, and select **Run**. The page displays the current graph stage, generated code for each iteration, error categories, and the final result.
+Open the local URL shown by Streamlit, enter a task, optionally provide test input for programs that read from standard input, and select **Run**. The page displays the current graph stage, generated code for each iteration, error categories, and the final result.
 
 ## Error Categories
 

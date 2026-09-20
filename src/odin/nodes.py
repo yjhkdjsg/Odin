@@ -10,7 +10,7 @@ def generate_node(state: GraphState) -> dict:
 
 
 def execute_node(state: GraphState) -> dict:
-    result = run_code(state["code"])
+    result = run_code(state["code"], input_data=state["input_data"])
     error = result.stderr if not result.success else ""
     return {"success": result.success, "error": error, "history": [{"stage": "execute", "success": result.success, "stdout": result.stdout, "stderr": result.stderr}]}
 
