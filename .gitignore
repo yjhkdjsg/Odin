@@ -1,6 +1,69 @@
-# ODIN
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Environment Variables
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Environment
 .env
-.env.*
-!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ODIN runtime data — present on disk but not committed
+outputs/
+output/
+chroma_data/
+experiments/results/
+odin.log
+*.log
+
+# Legacy paths (superseded by outputs/ and chroma_data/)
+data/chromadb/
+data/runs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Type checking
+.pytype/

@@ -1,0 +1,200 @@
+[
+  {
+    "task_id": "syn_01",
+    "title": "Fix missing colon & list comprehension",
+    "target_category": "syntax",
+    "problem_type": "algorithm",
+    "requirement": "Write a Python function `even_squares(nums)` that returns a list of squares of all even numbers in `nums`, preserving order.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "assert even_squares([1, 2, 3, 4, 5, 6]) == [4, 16, 36]\nassert even_squares([1, 3, 5]) == []\nassert even_squares([]) == []",
+    "relevant_doc_keywords": []
+  },
+  {
+    "task_id": "syn_02",
+    "title": "Palindrome checker with stdin",
+    "target_category": "syntax",
+    "problem_type": "dsa",
+    "requirement": "Write a Python program that reads a single line string from stdin, ignores spaces and case, and prints True if it is a palindrome else False.",
+    "test_input": "Never odd or even\n",
+    "expected_output": "True",
+    "test_cases": "",
+    "relevant_doc_keywords": []
+  },
+  {
+    "task_id": "run_01",
+    "title": "Safe average with empty list guard",
+    "target_category": "runtime",
+    "problem_type": "algorithm",
+    "requirement": "Write a Python function `safe_average(nums)` that returns the float average of a list of numbers rounded to 2 decimal places, returning 0.0 for an empty list.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "assert safe_average([10, 20, 30]) == 20.0\nassert safe_average([1, 2]) == 1.5\nassert safe_average([]) == 0.0",
+    "relevant_doc_keywords": []
+  },
+  {
+    "task_id": "run_02",
+    "title": "Nested dict safe getter",
+    "target_category": "runtime",
+    "problem_type": "algorithm",
+    "requirement": "Write a Python function `deep_get(data, keys, default=None)` that safely traverses nested dictionaries using a list of keys and returns `default` if any key is missing or an intermediate value is not a dict.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "assert deep_get({'a': {'b': {'c': 42}}}, ['a', 'b', 'c']) == 42\nassert deep_get({'a': {'b': 1}}, ['a', 'x', 'y'], -1) == -1\nassert deep_get({'a': None}, ['a', 'b'], 'missing') == 'missing'",
+    "relevant_doc_keywords": []
+  },
+  {
+    "task_id": "log_01",
+    "title": "DSA — Minimum Subarray Partition Cost (DP)",
+    "target_category": "logical",
+    "problem_type": "dsa",
+    "requirement": "Write a Python program that reads n and k on line 1 and n positive integers on line 2 from stdin. Find the minimum total cost to partition the array into exactly k non-empty contiguous subarrays where the cost of each subarray is the square of its sum. Print only the minimum cost integer.",
+    "test_input": "5 2\n1 2 3 4 5\n",
+    "expected_output": "117",
+    "test_cases": "",
+    "relevant_doc_keywords": []
+  },
+  {
+    "task_id": "log_02",
+    "title": "DSA — Second largest distinct element",
+    "target_category": "logical",
+    "problem_type": "dsa",
+    "requirement": "Write a Python function `second_largest(nums)` that returns the second largest distinct integer in `nums`, or None if fewer than two distinct integers exist.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "assert second_largest([3, 1, 4, 4, 2]) == 3\nassert second_largest([5, 5, 5]) is None\nassert second_largest([-1, -5, -2]) == -2\nassert second_largest([10]) is None",
+    "relevant_doc_keywords": []
+  },
+  {
+    "task_id": "log_03",
+    "title": "DSA — Merge overlapping intervals",
+    "target_category": "logical",
+    "problem_type": "dsa",
+    "requirement": "Write a Python function `merge_intervals(intervals)` that merges all overlapping [start, end] intervals and returns a sorted list of non-overlapping intervals.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "assert merge_intervals([[1, 3], [2, 6], [8, 10], [15, 18]]) == [[1, 6], [8, 10], [15, 18]]\nassert merge_intervals([[1, 4], [4, 5]]) == [[1, 5]]\nassert merge_intervals([]) == []",
+    "relevant_doc_keywords": []
+  },
+  {
+    "task_id": "api_01",
+    "title": "Pandas groupby named aggregation",
+    "target_category": "library_api",
+    "problem_type": "library_api",
+    "requirement": "Write a Python function `summarize_sales(df)` using pandas that groups a DataFrame with columns ['region', 'amount'] by 'region' and returns a DataFrame with columns ['region', 'total', 'avg'] sorted by 'region'.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "import pandas as pd\ndf = pd.DataFrame({'region': ['East', 'West', 'East'], 'amount': [10, 20, 30]})\nout = summarize_sales(df)\nassert list(out.columns) == ['region', 'total', 'avg']\nassert list(out['region']) == ['East', 'West']\nassert list(out['total']) == [40, 20]\nassert list(out['avg']) == [20.0, 20.0]",
+    "relevant_doc_keywords": ["groupby", "agg", "pandas"]
+  },
+  {
+    "task_id": "api_02",
+    "title": "JSON serialize NumPy stats dictionary",
+    "target_category": "library_api",
+    "problem_type": "library_api",
+    "requirement": "Write a Python function `stats_json(values)` using numpy and json that computes sum, max, and sorted unique values from a numpy int64 array and returns a valid JSON string with keys 'sum', 'max', and 'unique'.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "import json, numpy as np\nraw = stats_json(np.array([3, 1, 3, 2], dtype=np.int64))\nparsed = json.loads(raw)\nassert parsed['sum'] == 9\nassert parsed['max'] == 3\nassert parsed['unique'] == [1, 2, 3]",
+    "relevant_doc_keywords": ["json", "int64", "serializable"]
+  },
+  {
+    "task_id": "api_03",
+    "title": "Pandas semicolon CSV string parser",
+    "target_category": "library_api",
+    "problem_type": "library_api",
+    "requirement": "Write a Python function `parse_semicolon_csv(csv_text)` using pandas and io.StringIO that parses semicolon-separated CSV text and returns the DataFrame.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "df = parse_semicolon_csv('name;age;city\\nAlice;30;Delhi\\nBob;25;Noida')\nassert list(df.columns) == ['name', 'age', 'city']\nassert len(df) == 2\nassert int(df.loc[0, 'age']) == 30",
+    "relevant_doc_keywords": ["read_csv", "sep", "pandas"]
+  },
+  {
+    "task_id": "ver_01",
+    "title": "Pandas 2.x/3.x DataFrame.append removal",
+    "target_category": "version_specific",
+    "problem_type": "version_specific",
+    "requirement": "Write a Python function `append_row(df, row_dict)` using pandas that appends `row_dict` as a new row to `df` and returns the combined DataFrame with reset RangeIndex. Start by attempting df.append(row_dict, ignore_index=True) if unsure and repair to modern pandas syntax.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "import pandas as pd\ndf = pd.DataFrame([{'a': 1, 'b': 2}])\nres = append_row(df, {'a': 3, 'b': 4})\nassert len(res) == 2\nassert list(res['a']) == [1, 3]\nassert list(res.index) == [0, 1]",
+    "relevant_doc_keywords": ["append", "concat", "pandas"]
+  },
+  {
+    "task_id": "ver_02",
+    "title": "Pandas 3.x fillna forward-fill removal",
+    "target_category": "version_specific",
+    "problem_type": "version_specific",
+    "requirement": "Write a Python function `forward_fill_df(df)` using pandas that forward-fills NaN values in all columns of `df` and returns the filled DataFrame compatible with pandas 3.x.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "import pandas as pd\ndf = pd.DataFrame({'x': [1.0, None, None, 4.0]})\nout = forward_fill_df(df)\nassert list(out['x']) == [1.0, 1.0, 1.0, 4.0]",
+    "relevant_doc_keywords": ["fillna", "ffill", "pandas"]
+  },
+  {
+    "task_id": "ver_03",
+    "title": "NumPy 2.x trapezoid integration (np.trapz removed)",
+    "target_category": "version_specific",
+    "problem_type": "version_specific",
+    "requirement": "Write a Python function `integrate_curve(y, x)` using NumPy 2.x to compute the trapezoidal integral of `y` over `x` and return a Python float.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "import numpy as np\narea = integrate_curve(np.array([0.0, 2.0, 4.0]), np.array([0.0, 1.0, 2.0]))\nassert abs(area - 4.0) < 1e-6",
+    "relevant_doc_keywords": ["trapz", "trapezoid", "numpy"]
+  },
+  {
+    "task_id": "ver_04",
+    "title": "Scikit-Learn OneHotEncoder dense output (sparse_output)",
+    "target_category": "version_specific",
+    "problem_type": "version_specific",
+    "requirement": "Write a Python function `encode_labels(labels)` using `sklearn.preprocessing.OneHotEncoder` that returns a dense 2D numpy array encoding the 1D list of string labels.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "import numpy as np\narr = encode_labels(['cat', 'dog', 'cat'])\nassert isinstance(arr, np.ndarray)\nassert arr.shape == (3, 2)\nassert (arr[0] == arr[2]).all()",
+    "relevant_doc_keywords": ["OneHotEncoder", "sparse_output", "sklearn"]
+  },
+  {
+    "task_id": "unc_01",
+    "title": "itertools.groupby on unsorted list",
+    "target_category": "uncommon_pattern",
+    "problem_type": "uncommon_pattern",
+    "requirement": "Write a Python function `count_words(words)` using `itertools.groupby` that returns a dictionary mapping each word to its total frequency even when identical words are non-adjacent.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "assert count_words(['apple', 'banana', 'apple', 'cherry', 'banana']) == {'apple': 2, 'banana': 2, 'cherry': 1}\nassert count_words([]) == {}",
+    "relevant_doc_keywords": ["groupby", "itertools", "sort"]
+  },
+  {
+    "task_id": "unc_02",
+    "title": "functools.reduce with empty sequence initializer",
+    "target_category": "uncommon_pattern",
+    "problem_type": "uncommon_pattern",
+    "requirement": "Write a Python function `product_of_list(nums)` using `functools.reduce` that returns the product of all integers in `nums`, returning 1 for an empty list.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "assert product_of_list([2, 3, 4]) == 24\nassert product_of_list([5]) == 5\nassert product_of_list([]) == 1",
+    "relevant_doc_keywords": ["reduce", "functools", "initial"]
+  },
+  {
+    "task_id": "unc_03",
+    "title": "heapq priority queue with dict payloads and tied priorities",
+    "target_category": "uncommon_pattern",
+    "problem_type": "uncommon_pattern",
+    "requirement": "Write a Python function `pop_in_priority_order(tasks)` using `heapq` where `tasks` is a list of `(priority: int, payload: dict)` tuples (priorities may tie). Return the list of payload dicts in ascending priority order, breaking ties by original insertion order.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "res = pop_in_priority_order([(2, {'id': 'b'}), (1, {'id': 'a1'}), (1, {'id': 'a2'})])\nassert [r['id'] for r in res] == ['a1', 'a2', 'b']\nassert pop_in_priority_order([]) == []",
+    "relevant_doc_keywords": ["heapq", "tie", "counter"]
+  },
+  {
+    "task_id": "unc_04",
+    "title": "collections.abc.MutableMapping custom case-insensitive dict",
+    "target_category": "uncommon_pattern",
+    "problem_type": "uncommon_pattern",
+    "requirement": "Write a Python class `CaseInsensitiveDict` subclassing `collections.abc.MutableMapping` that stores string keys case-insensitively (lowercased) and supports get, set, del, len, and iteration.",
+    "test_input": "",
+    "expected_output": "",
+    "test_cases": "d = CaseInsensitiveDict()\nd['Content-Type'] = 'application/json'\nassert d['content-type'] == 'application/json'\nassert len(d) == 1\ndel d['CONTENT-TYPE']\nassert len(d) == 0",
+    "relevant_doc_keywords": ["MutableMapping", "collections.abc", "__delitem__"]
+  }
+]
